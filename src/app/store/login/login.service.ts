@@ -7,12 +7,12 @@ import { Observable } from 'rxjs';
 })
 export class LoginService {
   //private url = 'https://localhost:5101/User/login';
-  private url = 'studysphereapi.azurewebsites.net/User/login';
+  //private url = ;
 
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string): Observable<string> {
-    return this.http.post(this.url, { username, password }, { responseType: 'text' });
+    return this.http.post('https://studysphereapi.azurewebsites.net/User/login', { username, password }, { responseType: 'text' });
   }
   
 }
