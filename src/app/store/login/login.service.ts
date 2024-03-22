@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'any'
 })
 export class LoginService {
-  private url = 'http://localhost:5192/User/login';
+  //private url = 'https://localhost:5101/User/login';
+  private url = 'studysphereapi.azurewebsites.net/User/login';
 
   constructor(private http: HttpClient) {}
 

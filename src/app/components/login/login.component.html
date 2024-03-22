@@ -11,8 +11,8 @@
       <label for="password" class="mat-form-field-label">Password:</label>
       <input type="password" id="password" name="password" [(ngModel)]="password" placeholder="Enter your password" class="custom-input"><br><br>
       <button class="button-submit">Submit</button>
+      <div *ngIf="errorMessage" class="error-message">{{errorMessage}}</div>
     </form>
   </div>
-  <img src="./assets/images/homescreen.jpg" alt="Background Image" style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; z-index: -1;">
   <router-outlet></router-outlet>
 </div>

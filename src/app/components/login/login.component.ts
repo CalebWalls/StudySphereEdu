@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   password: string = '';
   loginState$: Observable<LoginState>;
   loginSubscription!: Subscription;
+  errorMessage: string | null = null;
 
   constructor(private store: Store<AppState>, private router: Router) {
     this.loginState$ = this.store.select(state => state.login);
@@ -28,6 +29,9 @@ export class LoginComponent implements OnInit, OnDestroy {
       console.log(state);
       if (state.isLoggedIn) {
         this.router.navigate(['/home']);
+      }
+      else if (state.response && state.response.startsWith('Login failed')) {
+        this.errorMessage = 'Username Or Password is incorrect. Please try again.';
       }
     });
     this.login();
